@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { CapsuleEntity } from '../../@types';
 
-const CapsuleCard: FC<CapsuleEntity> = (cap) => {
+const CapsuleCard: FC<CapsuleEntity & { onClick: () => void }> = (cap) => {
   function statusColor() {
     switch (cap.status) {
       case 'active':
@@ -22,6 +22,7 @@ const CapsuleCard: FC<CapsuleEntity> = (cap) => {
     <div
       className="border p-4 rounded-md smooth-animate hover:bg-gray-100
      cursor-pointer sm:hover:scale-105 sm:hover:-translate-y-1 animate-fade-in"
+      onClick={cap.onClick}
     >
       <div className="border rounded-full mx-auto w-16 h-16 flex items-center justify-center">
         <img src="/capsule.jpeg" width={40} height={40} alt="capsule" />

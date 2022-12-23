@@ -14,3 +14,10 @@ export interface MissionsEntity {
   name: string;
   flight: number;
 }
+
+export interface ModalProps {
+  showModal: boolean;
+  setShowModal: (state: boolean) => void;
+  shouldCloseOnBackDrop?: boolean;
+  shouldDisableBackgroundScroll?: boolean;
+}

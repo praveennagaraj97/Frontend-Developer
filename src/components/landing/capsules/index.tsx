@@ -6,11 +6,13 @@ import { useSearchFormStore } from '../../../context/search-form';
 import CapsuleCard from '../../shared/capsule-card';
 import PaginationControls from '../../shared/pagination-controls';
 import CapsuleCardSkeleton from '../../shared/skeletons/capsule-card';
+import ViewCapsuleDetails from '../../shared/view-capsule';
 
 const LandingCapsulesResults: FC = () => {
   const [formValues] = useSearchFormStore();
 
   const [pageNumber, setPageNumber] = useState(1);
+  const [viewCapsule, setViewCapsule] = useState<CapsuleEntity | null>(null);
 
   const { data, isLoading } = useSwr<CapsuleEntity[]>(
     SpaceXCapsules +
@@ -40,7 +42,13 @@ const LandingCapsulesResults: FC = () => {
             {data
               ?.slice((pageNumber - 1) * 10, (pageNumber - 1) * 10 + 10)
               ?.map((cap, idx) => {
-                return <CapsuleCard {...cap} key={idx} />;
+                return (
+                  <CapsuleCard
+                    {...cap}
+                    key={idx}
+                    onClick={() => setViewCapsule(cap)}
+                  />
+                );
               })}
           </Fragment>
         )}
@@ -51,6 +59,13 @@ const LandingCapsulesResults: FC = () => {
         total={data?.length || 0}
         onChange={(val) => setPageNumber(val)}
         hasNext={data?.[(pageNumber - 1) * 10 + 10] !== undefined}
+      />
+      <ViewCapsuleDetails
+        data={viewCapsule}
+        setShowModal={() => {
+          setViewCapsule(null);
+        }}
+        showModal={viewCapsule !== null}
       />
     </div>
   );
