@@ -6,6 +6,31 @@
 
 @layer base {
   body {
-    font-family: 'Poppins';
+    @apply font-poppins;
+  }
+}
+
+@layer utilities {
+  button:disabled,
+  button[disabled] {
+    @apply opacity-50 transform transition-all pointer-events-none;
+  }
+
+  input:disabled,
+  input[disabled] {
+    @apply opacity-50 transform transition-all pointer-events-none;
+  }
+
+  select:disabled,
+  select[disabled] {
+    @apply opacity-50 transform transition-all pointer-events-none;
+  }
+
+  .smooth-animate {
+    @apply transform transition-all duration-300;
+  }
+
+  .skeleton {
+    @apply animate-pulse opacity-80 bg-gray-300;
   }
 }
