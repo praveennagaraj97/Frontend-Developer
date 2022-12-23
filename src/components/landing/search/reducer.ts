@@ -1,6 +1,6 @@
 export enum SearchFormInputs {
   Status,
-  OriginalData,
+  OriginalDate,
   Type,
 }
 
@@ -19,7 +19,7 @@ export const searchFormReducer = (
       return { ...state, status: action.payload };
     case SearchFormInputs.Type:
       return { ...state, type: action.payload };
-    case SearchFormInputs.OriginalData:
+    case SearchFormInputs.OriginalDate:
       return { ...state, date: action.payload };
     default: {
       return state;

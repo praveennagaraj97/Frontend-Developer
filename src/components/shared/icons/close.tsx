@@ -3,7 +3,7 @@ export default function CloseIcon(): JSX.Element {
     <svg
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 24 24"
       height="1em"
       width="1em"
@@ -12,7 +12,7 @@ export default function CloseIcon(): JSX.Element {
       <path
         fill="none"
         stroke="#000"
-        stroke-width="2"
+        strokeWidth="2"
         d="M7,7 L17,17 M7,17 L17,7"
       ></path>
     </svg>

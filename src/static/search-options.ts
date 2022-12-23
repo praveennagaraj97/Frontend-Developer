@@ -12,5 +12,4 @@ export const capsulesTypes: { title: string; value: string }[] = [
   { title: 'Dragon 2.0', value: 'Dragon 2.0' },
   { title: 'Dragon 1.1', value: 'Dragon 1.1' },
   { title: 'Dragon 1.0', value: 'Dragon 1.0' },
-  { title: 'Dragon 1.0', value: 'Dragon 1.0' },
 ];

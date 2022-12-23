@@ -19,12 +19,6 @@ const SearchForm: FC = () => {
           dispatch({ type: SearchFormInputs.Status, payload: value });
         }}
       />
-      <input
-        type="date"
-        placeholder="Choose Original Launch date"
-        className="w-full p-2 transform transition-all will-change-transform
-        duration-300 focus:outline-1 outline-blue-500/40 text-sm border rounded-md"
-      />
       <DropDownInput
         icon={<StatusRocketIcon />}
         selected={formValues.type}
@@ -33,6 +27,18 @@ const SearchForm: FC = () => {
         onChange={(value) => {
           dispatch({ type: SearchFormInputs.Type, payload: value });
         }}
+      />
+      <input
+        onChange={(ev) => {
+          dispatch({
+            payload: ev.target.value,
+            type: SearchFormInputs.OriginalDate,
+          });
+        }}
+        type="date"
+        placeholder="Choose Original Launch date"
+        className="w-full p-2 transform transition-all will-change-transform
+        duration-300 focus:outline-1 outline-blue-500/40 text-sm border rounded-md"
       />
     </form>
   );

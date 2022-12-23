@@ -57,12 +57,15 @@ const DropDownInput: FC<DropDownInputProps> = ({
         )}
       </div>
       {show && (
-        <div className="animate-fade-in absolute left-0 right-0 text-start border rounded-b-md shadow-sm hover:shadow-lg smooth-animate">
+        <div className="z-20 bg-white animate-fade-in absolute left-0 right-0 text-start border rounded-b-md shadow-sm hover:shadow-lg smooth-animate">
           {options.map((opt) => {
             return (
               <div
                 key={opt.value}
                 onClick={() => {
+                  if (selected === opt.value) {
+                    return;
+                  }
                   onChange(opt.value);
                 }}
                 className="px-2 py-1.5 border-b text-sm hover:bg-gray-100 smooth-animate cursor-pointer"
