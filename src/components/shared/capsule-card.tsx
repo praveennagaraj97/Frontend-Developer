@@ -21,7 +21,7 @@ const CapsuleCard: FC<CapsuleEntity> = (cap) => {
   return (
     <div
       className="border p-4 rounded-md smooth-animate hover:bg-gray-100
-     cursor-pointer hover:scale-105 hover:-translate-y-1 animate-fade-in"
+     cursor-pointer sm:hover:scale-105 sm:hover:-translate-y-1 animate-fade-in"
     >
       <div className="border rounded-full mx-auto w-16 h-16 flex items-center justify-center">
         <img src="/capsule.jpeg" width={40} height={40} alt="capsule" />
